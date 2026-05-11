@@ -205,27 +205,37 @@ input {
 }
 
 .site-header.is-docked {
-  top: 0;
+  --nav-bg: rgba(255, 253, 248, 0.48);
+  --nav-border: rgba(255, 255, 255, 0.34);
+  --nav-halo: rgba(255, 253, 248, 0.24);
+  top: -2px;
   width: 100%;
-  min-height: 58px;
-  padding: 0.48rem max(5vw, calc((100vw - var(--max-width)) / 2 + 0.72rem));
-  border-top-color: transparent;
+  min-height: 60px;
+  padding: calc(0.48rem + 2px) max(5vw, calc((100vw - var(--max-width)) / 2 + 0.72rem)) 0.48rem;
+  border-top-width: 0;
   border-right-color: transparent;
   border-left-color: transparent;
   border-radius: 0 0 24px 24px;
 }
 
 .site-header.is-docked::before {
+  inset: -3px 0 0;
   -webkit-backdrop-filter: saturate(155%) blur(22px);
   backdrop-filter: saturate(155%) blur(22px);
 }
 
 .site-header.is-docked::after {
-  inset: auto 0 -28px;
+  inset: auto 0 -26px;
   height: 48px;
   border-radius: 0 0 34px 34px;
   filter: blur(18px);
-  opacity: 0.58;
+  opacity: 0.4;
+}
+
+[data-theme="dark"] .site-header.is-docked {
+  --nav-bg: rgba(8, 26, 18, 0.44);
+  --nav-border: rgba(173, 220, 175, 0.1);
+  --nav-halo: rgba(8, 36, 24, 0.28);
 }
 
 .header-actions {
@@ -845,10 +855,10 @@ input {
   }
 
   .site-header.is-docked {
-    top: 0;
+    top: -2px;
     width: 100%;
-    min-height: 56px;
-    padding: 0.44rem 0.68rem;
+    min-height: 58px;
+    padding: calc(0.44rem + 2px) 0.68rem 0.44rem;
     border-radius: 0 0 18px 18px;
   }
 
