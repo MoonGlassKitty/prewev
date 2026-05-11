@@ -1,7 +1,9 @@
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector("#site-nav");
+const siteHeader = document.querySelector(".site-header");
 const themeToggle = document.querySelector(".theme-toggle");
 const themeStorageKey = "moon-notes-theme";
+const headerDockThreshold = 92;
 
 function getStoredTheme() {
   try {
@@ -37,7 +39,47 @@ function applyTheme(theme) {
   themeToggle?.setAttribute("title", isDark ? "切换浅色主题" : "切换深色主题");
 }
 
+function withThemeTransition(callback) {
+  if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+    callback();
+    return;
+  }
+
+  document.documentElement.classList.add("theme-switching");
+  document.documentElement.offsetHeight;
+  callback();
+
+  window.clearTimeout(withThemeTransition.timeoutId);
+  withThemeTransition.timeoutId = window.setTimeout(() => {
+    document.documentElement.classList.remove("theme-switching");
+  }, 520);
+}
+
 applyTheme(getPreferredTheme());
+
+let headerTicking = false;
+
+function updateHeaderDocking() {
+  if (!siteHeader) return;
+
+  siteHeader.classList.toggle("is-docked", window.scrollY > headerDockThreshold);
+}
+
+updateHeaderDocking();
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (headerTicking) return;
+
+    headerTicking = true;
+    window.requestAnimationFrame(() => {
+      updateHeaderDocking();
+      headerTicking = false;
+    });
+  },
+  { passive: true },
+);
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
@@ -57,8 +99,10 @@ if (navToggle && siteNav) {
 
 themeToggle?.addEventListener("click", () => {
   const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-  applyTheme(nextTheme);
-  storeTheme(nextTheme);
+  withThemeTransition(() => {
+    applyTheme(nextTheme);
+    storeTheme(nextTheme);
+  });
 });
 
 const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));

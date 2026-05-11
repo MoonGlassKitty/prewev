@@ -153,6 +153,14 @@ input {
   box-shadow: var(--nav-shadow);
   transform: translateX(-50%);
   isolation: isolate;
+  transition:
+    top 360ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    width 360ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    min-height 360ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    padding 360ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    border-color 360ms ease,
+    border-radius 360ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    box-shadow 360ms ease;
 }
 
 .site-header::before,
@@ -166,9 +174,13 @@ input {
   inset: 0;
   z-index: -1;
   border-radius: inherit;
-  background: var(--nav-bg);
+  background-color: var(--nav-bg);
   -webkit-backdrop-filter: saturate(150%) blur(24px);
   backdrop-filter: saturate(150%) blur(24px);
+  transition:
+    background-color 420ms ease,
+    -webkit-backdrop-filter 360ms ease,
+    backdrop-filter 360ms ease;
 }
 
 .site-header::after {
@@ -183,6 +195,35 @@ input {
   );
   filter: blur(14px);
   opacity: 0.88;
+  transition:
+    inset 360ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    border-radius 360ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    opacity 360ms ease,
+    filter 360ms ease;
+}
+
+.site-header.is-docked {
+  top: 0;
+  width: 100%;
+  min-height: 58px;
+  padding: 0.48rem max(5vw, calc((100vw - var(--max-width)) / 2 + 0.72rem));
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0 0 24px 24px;
+}
+
+.site-header.is-docked::before {
+  -webkit-backdrop-filter: saturate(155%) blur(22px);
+  backdrop-filter: saturate(155%) blur(22px);
+}
+
+.site-header.is-docked::after {
+  inset: auto 0 -28px;
+  height: 48px;
+  border-radius: 0 0 34px 34px;
+  filter: blur(18px);
+  opacity: 0.58;
 }
 
 .header-actions {
@@ -286,6 +327,22 @@ input {
     background-color 180ms ease,
     box-shadow 180ms ease,
     transform 180ms ease;
+}
+
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition:
+    background-color 460ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    color 460ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    border-color 460ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    box-shadow 460ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    opacity 460ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    filter 460ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    transform 460ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    -webkit-backdrop-filter 460ms cubic-bezier(0.2, 0.72, 0.18, 1),
+    backdrop-filter 460ms cubic-bezier(0.2, 0.72, 0.18, 1) !important;
 }
 
 [data-theme="dark"] .theme-toggle-icon {
@@ -776,6 +833,14 @@ input {
     min-height: 58px;
     padding: 0.48rem 0.54rem 0.48rem 0.72rem;
     border-radius: 18px;
+  }
+
+  .site-header.is-docked {
+    top: 0;
+    width: 100%;
+    min-height: 56px;
+    padding: 0.44rem 0.68rem;
+    border-radius: 0 0 18px 18px;
   }
 
   .nav-toggle {
