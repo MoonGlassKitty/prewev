@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="页面未找到。">
     <title>页面未找到 | Moon Notes</title>
+    <script>
+      (() => {
+        try {
+          const theme = localStorage.getItem("moon-notes-theme");
+          if (theme === "dark" || theme === "light") {
+            document.documentElement.dataset.theme = theme;
+          } else if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.dataset.theme = "dark";
+          }
+        } catch {}
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body class="post-page">
@@ -13,11 +25,23 @@
         <span class="brand-mark">M</span>
         <span>Moon Notes</span>
       </a>
-      <nav class="site-nav" aria-label="主导航">
-        <a href="index.html#posts">文章</a>
-        <a href="index.html#about">关于</a>
-        <a href="index.html#contact">联系</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="site-nav" id="site-nav" aria-label="主导航">
+          <a href="index.html#posts">文章</a>
+          <a href="index.html#about">关于</a>
+          <a href="index.html#contact">联系</a>
+        </nav>
+
+        <button class="theme-toggle" type="button" aria-label="切换深色主题" title="切换深色主题">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
     <main class="article-shell">
@@ -30,5 +54,7 @@
         <a class="button button-primary" href="index.html">回到首页</a>
       </article>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,19 +1,65 @@
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector("#site-nav");
+const themeToggle = document.querySelector(".theme-toggle");
+const themeStorageKey = "moon-notes-theme";
+
+function getStoredTheme() {
+  try {
+    return localStorage.getItem(themeStorageKey);
+  } catch {
+    return null;
+  }
+}
+
+function storeTheme(theme) {
+  try {
+    localStorage.setItem(themeStorageKey, theme);
+  } catch {
+    // Some private browsing modes block localStorage.
+  }
+}
+
+function getPreferredTheme() {
+  const storedTheme = getStoredTheme();
+
+  if (storedTheme === "dark" || storedTheme === "light") {
+    return storedTheme;
+  }
+
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+
+  const isDark = theme === "dark";
+  themeToggle?.setAttribute("aria-label", isDark ? "切换浅色主题" : "切换深色主题");
+  themeToggle?.setAttribute("title", isDark ? "切换浅色主题" : "切换深色主题");
+}
+
+applyTheme(getPreferredTheme());
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("is-open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.setAttribute("aria-label", isOpen ? "关闭导航" : "打开导航");
   });
 
   siteNav.addEventListener("click", (event) => {
     if (event.target instanceof HTMLAnchorElement) {
       siteNav.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "打开导航");
     }
   });
 }
+
+themeToggle?.addEventListener("click", () => {
+  const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  applyTheme(nextTheme);
+  storeTheme(nextTheme);
+});
 
 const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
 const postCards = Array.from(document.querySelectorAll(".post-card"));
