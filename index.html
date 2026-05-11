@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Moon Notes，一个记录技术、阅读和生活观察的个人博客。"
+    >
+    <title>Moon Notes | 个人博客</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到内容</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Moon Notes 首页">
+        <span class="brand-mark">M</span>
+        <span>Moon Notes</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="#posts">文章</a>
+        <a href="#notes">札记</a>
+        <a href="#about">关于</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img class="hero-image" src="assets/hero-workspace.png" alt="">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Personal Blog</p>
+          <h1 id="hero-title">把日常观察，写成可回头看的笔记。</h1>
+          <p>
+            这里收集技术实践、读书摘记和生活里的小发现。慢一点写，认真一点整理，让碎片变成可复用的经验。
+          </p>
+          <div class="hero-actions" aria-label="快捷入口">
+            <a class="button button-primary" href="#posts">阅读文章</a>
+            <a class="button button-secondary" href="#about">认识作者</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-band" aria-label="博客概览">
+        <div class="section-inner intro-grid">
+          <div>
+            <p class="section-kicker">Now writing</p>
+            <h2>技术、阅读、生活现场。</h2>
+          </div>
+          <p>
+            这个博客适合长期更新：每篇文章都是独立静态页面，主页负责展示最新内容、标签筛选和个人入口。
+          </p>
+          <dl class="stat-list">
+            <div>
+              <dt>03</dt>
+              <dd>示例文章</dd>
+            </div>
+            <div>
+              <dt>04</dt>
+              <dd>内容标签</dd>
+            </div>
+            <div>
+              <dt>0</dt>
+              <dd>构建依赖</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section" id="posts" aria-labelledby="posts-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Latest posts</p>
+              <h2 id="posts-title">最新文章</h2>
+            </div>
+            <label class="search-box">
+              <span>搜索</span>
+              <input id="post-search" type="search" placeholder="标题、摘要或标签">
+            </label>
+          </div>
+
+          <div class="filter-bar" aria-label="按标签筛选文章">
+            <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">全部</button>
+            <button class="chip" type="button" data-filter="技术" aria-pressed="false">技术</button>
+            <button class="chip" type="button" data-filter="阅读" aria-pressed="false">阅读</button>
+            <button class="chip" type="button" data-filter="生活" aria-pressed="false">生活</button>
+            <button class="chip" type="button" data-filter="写作" aria-pressed="false">写作</button>
+          </div>
+
+          <div class="post-grid" id="post-grid">
+            <article
+              class="post-card"
+              data-tags="技术 写作"
+              data-title="从一个静态网页开始个人博客"
+              data-excerpt="不用复杂框架，也可以用 GitHub Pages 开始持续写作。"
+            >
+              <div class="post-meta">
+                <time datetime="2026-05-08">2026.05.08</time>
+                <span>技术</span>
+              </div>
+              <h3><a href="posts/start-with-github-pages.html">从一个静态网页开始个人博客</a></h3>
+              <p>不用复杂框架，也可以用 GitHub Pages 开始持续写作。先跑起来，再慢慢打磨。</p>
+              <div class="tag-row" aria-label="文章标签">
+                <span>技术</span>
+                <span>写作</span>
+              </div>
+            </article>
+
+            <article
+              class="post-card"
+              data-tags="阅读 写作"
+              data-title="读书笔记应该留下什么"
+              data-excerpt="比起摘抄更多句子，我更想保留问题、关联和行动。"
+            >
+              <div class="post-meta">
+                <time datetime="2026-04-26">2026.04.26</time>
+                <span>阅读</span>
+              </div>
+              <h3><a href="posts/reading-notes.html">读书笔记应该留下什么</a></h3>
+              <p>比起摘抄更多句子，我更想保留问题、关联和行动，让阅读进入生活。</p>
+              <div class="tag-row" aria-label="文章标签">
+                <span>阅读</span>
+                <span>写作</span>
+              </div>
+            </article>
+
+            <article
+              class="post-card"
+              data-tags="技术 生活"
+              data-title="我的一周工具箱"
+              data-excerpt="记录这一周真正提升效率的小工具和小流程。"
+            >
+              <div class="post-meta">
+                <time datetime="2026-04-12">2026.04.12</time>
+                <span>技术</span>
+              </div>
+              <h3><a href="posts/weekly-tech-stack.html">我的一周工具箱</a></h3>
+              <p>记录这一周真正提升效率的小工具和小流程，也给下周留一点可复用的线索。</p>
+              <div class="tag-row" aria-label="文章标签">
+                <span>技术</span>
+                <span>生活</span>
+              </div>
+            </article>
+          </div>
+
+          <p class="empty-state" id="empty-state" hidden>没有找到匹配的文章。</p>
+        </div>
+      </section>
+
+      <section class="section note-band" id="notes" aria-labelledby="notes-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Short notes</p>
+              <h2 id="notes-title">最近札记</h2>
+            </div>
+          </div>
+          <div class="note-list">
+            <article>
+              <time datetime="2026-05-10">05.10</time>
+              <p>把常用链接、命令和想法收进一个固定入口，比到处找截图更可靠。</p>
+            </article>
+            <article>
+              <time datetime="2026-05-06">05.06</time>
+              <p>写一篇文章之前，先写一个真实问题；标题可以晚一点再漂亮。</p>
+            </article>
+            <article>
+              <time datetime="2026-05-01">05.01</time>
+              <p>好用的个人站不是一次做完的，是每次更新都顺手一点。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-layout" id="about" aria-labelledby="about-title">
+        <div class="section-inner about-grid">
+          <div>
+            <p class="section-kicker">About</p>
+            <h2 id="about-title">你好，我在这里整理自己的长期思考。</h2>
+          </div>
+          <div class="about-copy">
+            <p>
+              我喜欢把问题拆小，把经验写清楚。这个博客会记录技术学习、项目复盘、阅读笔记，以及一些和生活节奏有关的观察。
+            </p>
+            <p>
+              你可以把这里改成自己的职业、兴趣、城市和正在做的事情。先保持简单，等文章变多之后再加归档、分类页或订阅功能。
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div>
+        <p class="footer-title">Moon Notes</p>
+        <p>愿每一次记录，都让下一个自己少绕一点路。</p>
+      </div>
+      <div class="footer-links" aria-label="联系链接">
+        <a href="mailto:hello@example.com">Email</a>
+        <a href="https://github.com/" rel="noreferrer">GitHub</a>
+        <a href="#top">回到顶部</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

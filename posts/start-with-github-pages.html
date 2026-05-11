@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="一篇关于用静态文件和 GitHub Pages 开始个人博客的示例文章。"
+    >
+    <title>从一个静态网页开始个人博客 | Moon Notes</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body class="post-page">
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Moon Notes 首页">
+        <span class="brand-mark">M</span>
+        <span>Moon Notes</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="主导航">
+        <a href="../index.html#posts">文章</a>
+        <a href="../index.html#notes">札记</a>
+        <a href="../index.html#about">关于</a>
+        <a href="../index.html#contact">联系</a>
+      </nav>
+    </header>
+
+    <main class="article-shell">
+      <a class="back-link" href="../index.html#posts">返回文章列表</a>
+      <article>
+        <header class="article-header">
+          <div class="article-meta">
+            <time datetime="2026-05-08">2026.05.08</time>
+            <span>技术</span>
+            <span>约 4 分钟</span>
+          </div>
+          <h1>从一个静态网页开始个人博客</h1>
+          <p>不用复杂框架，也可以用 GitHub Pages 开始持续写作。先跑起来，再慢慢打磨。</p>
+        </header>
+
+        <div class="article-content">
+          <p>
+            个人博客最容易卡住的地方，往往不是技术，而是想一次做得太完整。静态网页的好处是边界很清楚：
+            一个入口文件、一份样式、几篇文章，就能公开发布。
+          </p>
+          <h2>先让它能被访问</h2>
+          <p>
+            GitHub Pages 会把仓库里的静态文件发布到网页上。只要根目录里有
+            <code>index.html</code>，并且仓库开启 Pages，访问地址就会自动生成。
+          </p>
+          <blockquote>
+            一个可以维护的网站，比一个永远停在计划里的完美网站更有价值。
+          </blockquote>
+          <h2>再让它适合长期写</h2>
+          <p>
+            当文章变多时，可以逐步增加归档页、分类页、RSS 或静态站点生成器。开始阶段保持简单，反而更容易养成更新节奏。
+          </p>
+          <ul>
+            <li>主页展示最近文章和个人介绍。</li>
+            <li>每篇文章放在 <code>posts/</code> 目录里。</li>
+            <li>图片和其他资源放在 <code>assets/</code> 目录里。</li>
+          </ul>
+        </div>
+      </article>
+
+      <nav class="article-nav" aria-label="文章导航">
+        <a href="../index.html#posts">全部文章</a>
+        <a href="reading-notes.html">下一篇：读书笔记应该留下什么</a>
+      </nav>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
