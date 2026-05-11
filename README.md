@@ -1,4 +1,4 @@
-# Moon Notes 个人博客
+# MoonGlass Lab 个人博客
 
 这是一个可以直接部署到 GitHub Pages 的纯静态个人 blog。没有构建步骤，也不需要后端服务。
 
@@ -64,8 +64,8 @@ Folder: /root
 
 ## 自定义内容
 
-- 把 `Moon Notes` 改成你的名字或博客名。
-- 把 `hello@example.com` 改成你的邮箱。
+- `MoonGlass Lab` 是当前博客名。
+- `assets/moonglass-logo.svg` 是当前站点 logo。
 - 把页脚 GitHub 链接改成你的 GitHub 主页。
 - 新文章可以复制 `posts/start-with-github-pages.html`，改标题、日期和正文，再在 `index.html` 的文章列表里加一张新卡片。
 

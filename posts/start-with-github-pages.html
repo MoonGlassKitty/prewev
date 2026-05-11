@@ -7,7 +7,8 @@
       name="description"
       content="一篇关于用静态文件和 GitHub Pages 开始个人博客的示例文章。"
     >
-    <title>从一个静态网页开始个人博客 | Moon Notes</title>
+    <title>把 prewev 挂到 GitHub Pages | MoonGlass Lab</title>
+    <link rel="icon" href="../assets/moonglass-logo.svg" type="image/svg+xml">
     <script>
       (() => {
         try {
@@ -24,9 +25,9 @@
   </head>
   <body class="post-page">
     <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Moon Notes 首页">
-        <span class="brand-mark">M</span>
-        <span>Moon Notes</span>
+      <a class="brand" href="../index.html" aria-label="MoonGlass Lab 首页">
+        <img class="brand-logo" src="../assets/moonglass-logo.svg" alt="">
+        <span>MoonGlass Lab</span>
       </a>
       <div class="header-actions">
         <nav class="site-nav" id="site-nav" aria-label="主导航">
@@ -54,41 +55,41 @@
         <header class="article-header">
           <div class="article-meta">
             <time datetime="2026-05-08">2026.05.08</time>
-            <span>技术</span>
+            <span>部署</span>
             <span>约 4 分钟</span>
           </div>
-          <h1>从一个静态网页开始个人博客</h1>
-          <p>不用复杂框架，也可以用 GitHub Pages 开始持续写作。先跑起来，再慢慢打磨。</p>
+          <h1>把 prewev 挂到 GitHub Pages</h1>
+          <p>从本地静态文件到线上博客，记录一次真实部署，也给之后的页面更新留一条路。</p>
         </header>
 
         <div class="article-content">
           <p>
-            个人博客最容易卡住的地方，往往不是技术，而是想一次做得太完整。静态网页的好处是边界很清楚：
-            一个入口文件、一份样式、几篇文章，就能公开发布。
+            这个站点起点很轻：`index.html`、`styles.css`、`script.js`，再加几篇静态文章。目录名叫
+            `prewev`，后来被推到 GitHub 仓库，变成可以直接访问的个人实验笔记。
           </p>
           <h2>先让它能被访问</h2>
           <p>
-            GitHub Pages 会把仓库里的静态文件发布到网页上。只要根目录里有
-            <code>index.html</code>，并且仓库开启 Pages，访问地址就会自动生成。
+            GitHub Pages 会把仓库里的静态文件发布到网页上。这个项目用 `main` 分支根目录发布，
+            不需要构建工具，也不需要服务器。
           </p>
           <blockquote>
-            一个可以维护的网站，比一个永远停在计划里的完美网站更有价值。
+            对 MoonGlassKitty 来说，先把站点跑起来，比把模板想得很完美更重要。
           </blockquote>
           <h2>再让它适合长期写</h2>
           <p>
-            当文章变多时，可以逐步增加归档页、分类页、RSS 或静态站点生成器。开始阶段保持简单，反而更容易养成更新节奏。
+            后面每次改完页面，只要提交并推送，GitHub Pages 就会自动更新。这个流程足够简单，适合继续写项目复盘。
           </p>
           <ul>
-            <li>主页展示最近文章和个人介绍。</li>
-            <li>每篇文章放在 <code>posts/</code> 目录里。</li>
-            <li>图片和其他资源放在 <code>assets/</code> 目录里。</li>
+            <li>主页负责展示最近实验和个人介绍。</li>
+            <li>文章放在 <code>posts/</code> 目录里。</li>
+            <li>logo、封面图和项目图片放在 <code>assets/</code> 目录里。</li>
           </ul>
         </div>
       </article>
 
       <nav class="article-nav" aria-label="文章导航">
         <a href="../index.html#posts">全部文章</a>
-        <a href="reading-notes.html">下一篇：读书笔记应该留下什么</a>
+        <a href="reading-notes.html">下一篇：手写图像生成的几次校验</a>
       </nav>
     </main>
 

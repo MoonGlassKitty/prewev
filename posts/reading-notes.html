@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="一篇关于如何整理读书笔记的示例文章。">
-    <title>读书笔记应该留下什么 | Moon Notes</title>
+    <meta name="description" content="一篇关于手写图像生成、长文本和输出校验的实验记录。">
+    <title>手写图像生成的几次校验 | MoonGlass Lab</title>
+    <link rel="icon" href="../assets/moonglass-logo.svg" type="image/svg+xml">
     <script>
       (() => {
         try {
@@ -21,9 +22,9 @@
   </head>
   <body class="post-page">
     <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Moon Notes 首页">
-        <span class="brand-mark">M</span>
-        <span>Moon Notes</span>
+      <a class="brand" href="../index.html" aria-label="MoonGlass Lab 首页">
+        <img class="brand-logo" src="../assets/moonglass-logo.svg" alt="">
+        <span>MoonGlass Lab</span>
       </a>
       <div class="header-actions">
         <nav class="site-nav" id="site-nav" aria-label="主导航">
@@ -51,35 +52,37 @@
         <header class="article-header">
           <div class="article-meta">
             <time datetime="2026-04-26">2026.04.26</time>
-            <span>阅读</span>
+            <span>图像</span>
             <span>约 3 分钟</span>
           </div>
-          <h1>读书笔记应该留下什么</h1>
-          <p>比起摘抄更多句子，我更想保留问题、关联和行动，让阅读进入生活。</p>
+          <h1>手写图像生成的几次校验</h1>
+          <p>从字体、长文本、照片纹理到输出检查，记录一个可以继续打磨的图像小实验。</p>
         </header>
 
         <div class="article-content">
           <p>
-            读书笔记不是把一本书搬进另一个文件里。真正有用的笔记，应该能在未来某个时刻重新启动思考。
+            `gitclone/test` 里留下了很多手写相关文件：字体、长文本、纹理页、输出检查图。这些文件名像一份实验日志，
+            说明重点不只是生成一张图，而是让结果能被反复检查和比较。
           </p>
-          <h2>留下问题</h2>
+          <h2>先把输入固定</h2>
           <p>
-            读到让人停顿的地方，先写下问题。问题能暴露自己还没有想明白的部分，也能让下一次阅读更有方向。
+            长文本、字体和页面尺寸需要稳定下来。输入稳定之后，输出里的字距、行距、纹理和倾斜才有比较意义。
           </p>
-          <h2>留下关联</h2>
+          <h2>再看输出差异</h2>
           <p>
-            一本书和另一本书、一个项目、一段经历之间的连接，往往比原句更有生命力。把关联写出来，知识才会长出路径。
+            `aligned_texture`、`photo_texture`、`output_check` 这些名字很清楚：一类负责生成，一类负责贴近真实纸面，
+            还有一类负责检查结果。
           </p>
-          <h2>留下行动</h2>
+          <h2>最后写成流程</h2>
           <p>
-            如果一本书改变了某个判断或习惯，给自己留一个可以执行的小动作。阅读不是结论的收藏，而是生活的微调。
+            下一步可以把参数、样例图和失败案例都收进文章。这样这个小实验就不只停留在文件夹里，而能变成可复用的流程。
           </p>
         </div>
       </article>
 
       <nav class="article-nav" aria-label="文章导航">
-        <a href="start-with-github-pages.html">上一篇：从一个静态网页开始个人博客</a>
-        <a href="weekly-tech-stack.html">下一篇：我的一周工具箱</a>
+        <a href="start-with-github-pages.html">上一篇：把 prewev 挂到 GitHub Pages</a>
+        <a href="weekly-tech-stack.html">下一篇：校园疏散模型和路线图</a>
       </nav>
     </main>
 
